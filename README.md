@@ -1,4 +1,4 @@
 # bootcamp
 
 ## Course Outline
-![Course Outline](/resources/Outline.jpg)
+![Course Outline](/Resources/Outline.jpg)
