@@ -90,6 +90,10 @@ tree.params <- rpart.control(minsplit=20, minbucket=7, maxdepth=30)
 iris.tree <- rpart(Species ~ ., data = iris.train, 
                        control=tree.params, parms=list(split="gini"))
 
+### Regression Decision Tree ####
+# Use method as "anova" as a parameter.
+iris.tree <- rpart(Petal.Length ~ ., data = iris.train, method="anova")
+
 ## EXERCISE
 ## Another library called "party" can be also used to build decision trees.
 ## It provides nonparametric regression trees for nominal, ordinal,
