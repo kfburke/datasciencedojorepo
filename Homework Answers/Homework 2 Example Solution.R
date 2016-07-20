@@ -107,7 +107,7 @@ levels(adult.full$income)
 ### Removing the period ###
 # We will call upon a string manipulation library called stringr.
 #    We will use a function called str_replace() within the
-#    the library itself. We will feed it the data, then character
+#    the library itself. We will feed it the data, the character
 #    we are trying to replace, with the character we wish to
 #    substitute it with. \\ is an escape character because
 #    normally the "." within this context uses a sub-language
