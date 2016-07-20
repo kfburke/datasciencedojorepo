@@ -1,6 +1,6 @@
 #################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015
+## Copyright (C) 2015~2016
 #################################################################
 
 # Homework Day 1: Example

@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015
+## Copyright (C) 2015~2016
 
 ## Objective: Machine learning of Kyphosis classification with decision tree
 ## Data source: kyphosis data set in "rpart" package

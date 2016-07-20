@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015
+## Copyright (C) 2015~2016
 
 ## Objective: Machine learning of iris species classification with decision tree
 ## Data source: spam data set (included in the package "ElemStatLearn")	

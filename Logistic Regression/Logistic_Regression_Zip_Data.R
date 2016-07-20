@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015
+## Copyright (C) 2015~2016
 
 ## Objective: Machine learning on hand-written digits recognition with logistic regression model. In this task, we just do the binary classification between digits '2' and '3'.
 ## Data source: zip.train.csv  and zip.test.csv   

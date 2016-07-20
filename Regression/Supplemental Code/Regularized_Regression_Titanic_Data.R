@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015
+## Copyright (C) 2015~2016
 
 ## Objective: Machine learning of Titanic data's survival classification regularized logistic regression
 ## Data source: Titanic data set

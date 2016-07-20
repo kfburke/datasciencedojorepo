@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015
+## Copyright (C) 2015~2016
 
 ## Objective: Building TF-IDF matrices using R, including stemming for dictionary compression
 ## Packages: tm, lsa
