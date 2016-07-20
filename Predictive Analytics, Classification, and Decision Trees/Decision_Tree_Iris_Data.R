@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015
+## Copyright (C) 2015~2016
 
 ## Objective: Machine learning of iris species classification with decision tree
 ## Data source: iris data set (included in R)
@@ -21,62 +21,74 @@ summary(iris)
 
 ## BUILD MODEL
 ## randomly choose 70% of the data set as training data
-set.seed(27)
-iris.train.indices <- sample(1:nrow(iris), 0.7*nrow(iris))
-iris.train.set <- iris[iris.train.indices,]
+set.seed(777)
+train.index <- sample(1:nrow(iris), 0.7*nrow(iris))
+iris.train <- iris[train.index,]
 dim(iris.train)
 ## select the 30% left as the testing data
-iris.test.set <- iris[-iris.train.indices,]
+iris.test <- iris[-train.index,]
 dim(iris.test)
-## You could also do this
-#iris.test.indices <- setdiff(1:nrow(iris),random.rows.train)
-#iris.test <- iris[random.rows.test,]
 
 # Default decision tree model
     # Builds a decision tree from the iris dataset to predict
     # species given all other columns as predictors
-iris.model.dt <- rpart(Species~.,data=iris.train.set)
+iris.tree <- rpart(Species~.,data=iris.train)
 
 # Reports the model
-print(iris.model.dt)
+print(iris.tree)
+
+## VISUALIZE THE MODEL
+## plot the tree structure
+plot(iris.tree, margin=c(.25))
+title(main = "Decision Tree Model of Iris Data")
+text(iris.tree, use.n = TRUE)
+## print the tree structure
+summary(iris.tree)
+
+## MODEL EVALUATION
+## make prediction using decision model
+iris.predictions <- predict(iris.tree, iris.test, type = "class")
+head(iris.predictions)
+
+## Comparison table
+iris.comparison <- iris.test
+iris.comparison$Predictions <- iris.predictions
+iris.comparison[ , c("Species", "Predictions")]
+
+## View misclassified rows
+disagreement.index <- iris.comparison$Species != iris.comparison$Predictions
+iris.comparison[disagreement.index,]
+
+## If instead you wanted probabilities.
+# iris.predictions <- predict(iris.tree, iris.test)
+
+## Extract the test data species to build the confusion matrix
+iris.confusion <- table(iris.predictions, iris.test$Species)
+print(iris.confusion)
+## calculate accuracy, precision, recall, F1
+iris.accuracy <- sum(diag(iris.confusion)) / sum(iris.confusion)
+print(iris.accuracy)
+
+iris.precision <- iris.confusion[2,2] / sum(iris.confusion[2,])
+print(iris.precision)
+
+iris.recall <- iris.confusion[2,2] / sum(iris.confusion[,2])
+print(iris.recall)
+
+iris.f1 <- 2 * iris.precision * iris.recall / (iris.precision + iris.recall)
+print(iris.f1)
+
 
 #### Parameter Tuning ####
 
 ## Setting control parameters for rpart
 ## Check ?rpart.control for what the parameters do
-iris.dt.parameters <- rpart.control(minsplit=20, minbucket=7, cp=0.01, maxdepth=30)
+tree.params <- rpart.control(minsplit=20, minbucket=7, maxdepth=30)
 
 ## Fit decision model to training set
 ## Use parameters from above and Gini index for splitting
-iris.model.dt <- rpart(Species ~ ., data = iris.train, 
-                       control=iris.dt.parameters, parms=list(split="gini"))
-
-## VISUALIZE THE MODEL
-## plot the tree structure
-plot(iris.model.dt)
-title(main = "Decision Tree Model of Iris Data")
-text(iris.model.dt, use.n = TRUE)
-## print the tree structure
-summary(iris.model.dt)
-
-## MODEL EVALUATION
-## make prediction using decision model
-iris.dt.predictions <- predict(iris.model.dt, iris.test.set, type = "class")
-## Extract the test data species to build the confusion matrix
-iris.dt.confusion <- table(iris.dt.predictions, iris.test.set$Species)
-print(iris.dt.confusion)
-## calculate accuracy, precision, recall, F1
-iris.dt.accuracy <- sum(diag(iris.dt.confusion)) / sum(iris.dt.confusion)
-print(iris.dt.accuracy)
-
-iris.dt.precision <- iris.dt.confusion[2,2] / sum(iris.dt.confusion[2,])
-print(iris.dt.precision)
-
-iris.dt.recall <- iris.dt.confusion[2,2] / sum(iris.dt.confusion[,2])
-print(iris.dt.recall)
-
-iris.dt.F1 <- 2 * iris.dt.precision * iris.dt.recall / (iris.dt.precision + iris.dt.recall)
-print(iris.dt.F1)
+iris.tree <- rpart(Species ~ ., data = iris.train, 
+                       control=tree.params, parms=list(split="gini"))
 
 ## EXERCISE
 ## Another library called "party" can be also used to build decision trees.
