@@ -83,7 +83,7 @@ print(iris.f1)
 
 ## Setting control parameters for rpart
 ## Check ?rpart.control for what the parameters do
-tree.params <- rpart.control(minsplit=20, minbucket=7, maxdepth=30)
+tree.params <- rpart.control(minsplit=20, minbucket=7, maxdepth=30, cp=0.01)
 
 ## Fit decision model to training set
 ## Use parameters from above and Gini index for splitting
