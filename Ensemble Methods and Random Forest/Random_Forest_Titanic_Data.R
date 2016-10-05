@@ -22,9 +22,10 @@ summary(titanic.data)
 
 ## remove PassengerID, Name, Ticket, and Cabin attributes
 titanic.data <- titanic.data[, -c(1, 4, 9, 11)]
+
 ## Cast target attribute to factor
 titanic.data$Survived <- as.factor(titanic.data$Survived)
-levels(titanic.data$Survived) <- c('Dead', 'Alive')
+
 ## there are some NAs in Age, fill them with the median value
 titanic.data$Age[is.na(titanic.data$Age)] <- median(titanic.data$Age, na.rm=TRUE)
 
@@ -39,6 +40,7 @@ summary(titanic.train$Survived)
 titanic.test <- titanic.data[-titanic.train.indices,]
 dim(titanic.test)
 summary(titanic.test$Survived)
+
 ## You could also do this
 #random.rows.test <- setdiff(1:nrow(titanic.data),random.rows.train)
 #titanic.test <- titanic.data[random.rows.test,]
