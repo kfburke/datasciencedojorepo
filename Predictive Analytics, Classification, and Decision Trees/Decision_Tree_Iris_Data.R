@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015~2016~2016
+## Copyright (C) 2015~2016
 
 ## Objective: Machine learning of iris species classification with decision tree
 ## Data source: iris data set (included in R)
