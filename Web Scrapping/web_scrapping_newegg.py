@@ -38,14 +38,14 @@ f.write(headers)
 # loops over each product and grabs attributes about
 # each product
 for container in containers:
-    # Finds all link tags "<a>" from within the first div.
+    # Finds all link tags "a" from within the first div.
     make_rating_sp = container.div.select("a")
 
     # Grabs the title from the image title attribute
     # Then does proper casing using .title()
     brand = make_rating_sp[0].img["title"].title()
 
-    # Grabs the text within the second "<a>" tag from within
+    # Grabs the text within the second "(a)" tag from within
     # the list of queries.
     product_name = container.div.select("a")[2].text
 
