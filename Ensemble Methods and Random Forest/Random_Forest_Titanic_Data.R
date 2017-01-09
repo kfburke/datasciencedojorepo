@@ -76,6 +76,31 @@ print(head(titanic.test))
 importance(titanic.rf.model)
 varImpPlot(titanic.rf.model)
 
+# Cross Validation
+number.of.folds = 10
+
+random.indices <- sample(1:nrow(titanic.data))
+begin = 1
+partition <- round(max/number.of.folds,digits=0)
+max <- length(random.indices)
+
+for (fold in 1:number.of.folds) {
+  end = max
+  if(fold < number.of.folds){
+    end = fold * partition
+  }
+  test_partition <- titanic.data[begin:end,]
+  train_partition <- titanic.data[-(begin:end),]
+
+  fold.model <- randomForest(Survived~., data=train_partition)
+  predictions <- predict(fold.model, newdata=test_partition, type="class")
+
+  fold.confusion <- table(predictions, test_partition$Species)
+  table(fold.confusion)
+  # update fields  
+  begin = end + 1
+}
+
 ## EXERCISE
 ## Random forest has built-in feature selection.
 ## varImpPlot() function helps us visualize the importance of the features passed to 

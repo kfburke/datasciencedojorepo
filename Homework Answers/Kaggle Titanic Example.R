@@ -9,7 +9,7 @@
 
 # My working directry and my file names
 working.directory <- "C:/Users/phuc/Downloads/titanic"
-train.filename <- "train.csv"
+train.filename <- "titanic.csv"
 test.filename  <- "test.csv"
 
 ###############
