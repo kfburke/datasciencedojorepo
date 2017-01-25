@@ -32,12 +32,12 @@ titanic.data$Age[is.na(titanic.data$Age)] <- median(titanic.data$Age, na.rm=TRUE
 ## BUILD MODEL
 ## randomly choose 70% of the data set as training data
 set.seed(27)
-titanic.train.indices <- sample(1:nrow(titanic.data), 0.7*nrow(titanic.data), replace=F)
-titanic.train <- titanic.data[titanic.train.indices,]
+train.index <- sample(1:nrow(titanic.data), 0.7*nrow(titanic.data))
+titanic.train <- titanic.data[train.index,]
 dim(titanic.train)
 summary(titanic.train$Survived)
 ## select the other 30% as the testing data
-titanic.test <- titanic.data[-titanic.train.indices,]
+titanic.test <- titanic.data[-train.index,]
 dim(titanic.test)
 summary(titanic.test$Survived)
 
@@ -76,30 +76,6 @@ print(head(titanic.test))
 importance(titanic.rf.model)
 varImpPlot(titanic.rf.model)
 
-# Cross Validation
-number.of.folds = 10
-
-random.indices <- sample(1:nrow(titanic.data))
-begin = 1
-partition <- round(max/number.of.folds,digits=0)
-max <- length(random.indices)
-
-for (fold in 1:number.of.folds) {
-  end = max
-  if(fold < number.of.folds){
-    end = fold * partition
-  }
-  test_partition <- titanic.data[begin:end,]
-  train_partition <- titanic.data[-(begin:end),]
-
-  fold.model <- randomForest(Survived~., data=train_partition)
-  predictions <- predict(fold.model, newdata=test_partition, type="class")
-
-  fold.confusion <- table(predictions, test_partition$Species)
-  table(fold.confusion)
-  # update fields  
-  begin = end + 1
-}
 
 ## EXERCISE
 ## Random forest has built-in feature selection.
