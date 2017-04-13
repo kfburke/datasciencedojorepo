@@ -120,7 +120,8 @@ rpart.cv.1 <- train(income ~ .,
                     method = "rpart",
                     trControl = caret.control,
                     tuneLength = 7)
-
+# Other algorithms to be used as "methods" in caret.
+# https://topepo.github.io/caret/available-models.html
 
 # Display the results of the cross validation run - 84.39% mean accuracy! 
 rpart.cv.1
