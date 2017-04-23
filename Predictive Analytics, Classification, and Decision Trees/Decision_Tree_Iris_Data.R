@@ -60,11 +60,12 @@ disagreement.index <- iris.comparison$Species != iris.comparison$Predictions
 iris.comparison[disagreement.index,]
 
 ## If instead you wanted probabilities.
-# iris.predictions <- predict(iris.tree, iris.test)
+# iris.predictions <- predict(iris.tree, iris.test, type = "class")
 
 ## Extract the test data species to build the confusion matrix
 iris.confusion <- table(iris.predictions, iris.test$Species)
 print(iris.confusion)
+
 ## calculate accuracy, precision, recall, F1
 iris.accuracy <- sum(diag(iris.confusion)) / sum(iris.confusion)
 print(iris.accuracy)
