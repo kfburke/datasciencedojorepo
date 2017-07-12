@@ -80,13 +80,6 @@ ggplot(adult.train, aes(x = marital.status, fill = income)) +
   geom_bar()
 
 
-# Many levels of marital.status show very strong separation of
-# income levels.
-ggplot(adult.train, aes(x = marital.status, fill = income)) +
-  theme_bw() +
-  geom_bar()
-
-
 # Many levels of occupation show very strong separation of
 # income levels.
 ggplot(adult.train, aes(x = occupation, fill = income)) +
