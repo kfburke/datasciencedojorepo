@@ -1,4 +1,7 @@
 # This is the master list of R packages used in the bootcamp
+install.packages("tm")
+install.packages("lsa")
+install.packages("stats")
 install.packages("miscTools")
 install.packages("animation")
 install.packages("lattice")
