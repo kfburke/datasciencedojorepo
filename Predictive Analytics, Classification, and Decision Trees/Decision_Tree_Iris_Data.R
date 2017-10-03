@@ -47,7 +47,7 @@ summary(iris.tree)
 
 ## MODEL EVALUATION
 ## make prediction using decision model
-iris.predictions <- predict(iris.tree, iris.test, type = "class")
+iris.predictions <- predict(iris.tree, iris.test, type = "prob")
 head(iris.predictions)
 
 ## Comparison table
