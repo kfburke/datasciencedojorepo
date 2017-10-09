@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015~2016
+## Copyright (C) 2015~2017
 
 ## Objective: Machine learning on ozone prediction with linear regression model
 ## Data source: ozone data set (in Datasets folder)
@@ -13,6 +13,12 @@ ozone.data <- read.table("Datasets/ozone.data", header=T)
 str(ozone.data)
 ## visualize the data
 plot(ozone.data)
+
+## visualize with ggplot
+ggplot(ozone.data, aes(x=wind, y=ozone)) + geom_point()
+gg <- ggplot(ozone.data, aes(x=temperature, y=ozone))
+gg + geom_point(aes(color=wind))
+gg + geom_point(aes(size=radiation)) + geom_point(aes(color=wind))
 
 ## BUILD MODEL
 ## randomly choose 70% of the data set as training data
