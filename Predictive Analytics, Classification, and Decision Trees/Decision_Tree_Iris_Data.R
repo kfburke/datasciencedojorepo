@@ -47,7 +47,7 @@ summary(iris.tree)
 
 ## MODEL EVALUATION
 ## make prediction using decision model
-iris.predictions <- predict(iris.tree, iris.test, type = "prob")
+iris.predictions <- predict(iris.tree, iris.test, type = "class")
 head(iris.predictions)
 
 ## Comparison table
@@ -60,7 +60,7 @@ disagreement.index <- iris.comparison$Species != iris.comparison$Predictions
 iris.comparison[disagreement.index,]
 
 ## If instead you wanted probabilities.
-# iris.predictions <- predict(iris.tree, iris.test, type = "class")
+# iris.predictions <- predict(iris.tree, iris.test, type = "prob")
 
 ## Extract the test data species to build the confusion matrix
 iris.confusion <- table(iris.predictions, iris.test$Species)
