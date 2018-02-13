@@ -11,14 +11,6 @@
 ## load the library
 library(rpart)
 
-## DATA EXPLORATION
-## load the iris data in R
-data(iris)
-## explore the data set
-str(iris)
-dim(iris)
-summary(iris)
-
 ## BUILD MODEL
 ## randomly choose 70% of the data set as training data
 set.seed(777)
@@ -33,9 +25,6 @@ dim(iris.test)
     # Builds a decision tree from the iris dataset to predict
     # species given all other columns as predictors
 iris.tree <- rpart(Species~.,data=iris.train)
-
-# Reports the model
-print(iris.tree)
 
 ## VISUALIZE THE MODEL
 ## plot the tree structure
@@ -64,21 +53,6 @@ iris.comparison[disagreement.index,]
 
 ## Extract the test data species to build the confusion matrix
 iris.confusion <- table(iris.predictions, iris.test$Species)
-print(iris.confusion)
-
-## calculate accuracy, precision, recall, F1
-iris.accuracy <- sum(diag(iris.confusion)) / sum(iris.confusion)
-print(iris.accuracy)
-
-iris.precision <- iris.confusion[2,2] / sum(iris.confusion[2,])
-print(iris.precision)
-
-iris.recall <- iris.confusion[2,2] / sum(iris.confusion[,2])
-print(iris.recall)
-
-iris.f1 <- 2 * iris.precision * iris.recall / (iris.precision + iris.recall)
-print(iris.f1)
-
 
 #### Parameter Tuning ####
 
