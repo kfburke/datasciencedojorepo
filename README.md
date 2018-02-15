@@ -1,4 +1,4 @@
 # Data Science and Data Engineering Bootcamp
 
 ## Course Outline
-![Course Outline](/Resources/Outline.jpg)
+![Course Outline](/Course Outline Updated.pdf)
