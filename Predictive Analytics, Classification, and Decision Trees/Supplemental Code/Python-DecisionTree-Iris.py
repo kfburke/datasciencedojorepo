@@ -1,6 +1,6 @@
 """
 This code is part of Data Science Dojo's bootcamp
-Copyright (C) 2016
+Copyright (c) 2016-2018
 
 Objective: Machine Learning of the Iris dataset with a Decision Tree
 Data Source: scikit-learn iris dataset

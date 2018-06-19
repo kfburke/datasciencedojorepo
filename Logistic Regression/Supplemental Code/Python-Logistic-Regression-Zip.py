@@ -1,6 +1,6 @@
 """
 This code is part of Data Science Dojo's bootcamp
-Copyright (C) 2016
+Copyright (C) 2016-2018
 
 Objective: Machine Learning of the Zip dataset with logistic regression. Binary classification of '2' and '3'.
 Data Source: bootcamp root/Datasets/titanic.csv

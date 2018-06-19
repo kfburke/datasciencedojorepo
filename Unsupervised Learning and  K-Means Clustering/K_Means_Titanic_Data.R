@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2017
+## Copyright (c) 2017-2018
 ##
 ## Objective: Cluster Titanic training data using K-Means clustering then attempt 
 ##            to explain the clustering using a single rpart decision tree.

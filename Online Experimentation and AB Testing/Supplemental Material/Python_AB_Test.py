@@ -1,6 +1,6 @@
 """
 This code is part of Data Science Dojo's bootcamp
-Copyright (C) 2016
+Copyright (C) 2016-2018
 
 Objective: Understand AB Testing by two simple examples
 Data source: Dwell_Time_VersionA.csv and Dwell_Time_VersionB.csv at:

@@ -1,6 +1,6 @@
 """
 This code is part of Data Science Dojo's bootcamp
-Copyright (C) 2016
+Copyright (C) 2016-2018
 
 Objective: Machine Learning of the Ozone dataset with linear regression
 Data Source: bootcamp root/Datasets/titanic.csv

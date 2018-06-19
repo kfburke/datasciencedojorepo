@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015~2017
+## Copyright (c) 2015-2018
 
 ## Objective: Perform Text Analysis preprocessing tasks and evaluate document
 ##            similarity via TF-IDF.

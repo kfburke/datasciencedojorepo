@@ -1,6 +1,6 @@
 """
 This code is part of Data Science Dojo's bootcamp
-Copyright (C) 2016
+Copyright (c) 2016-2018
 
 Objective: Explore and visualize data using Python
 Data Source: Multiple

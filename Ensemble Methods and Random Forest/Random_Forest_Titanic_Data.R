@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015~2016
+## Copyright (c) 2015-2018
 
 ## Objective: Machine learning of Titanic data's survival classification with ensemble methods (random forest and boosted decision tree)
 ## Data source: Titanic data set

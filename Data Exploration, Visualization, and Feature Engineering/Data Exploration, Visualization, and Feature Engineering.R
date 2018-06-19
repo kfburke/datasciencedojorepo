@@ -1,6 +1,6 @@
 ################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015~2016
+## Copyright (c) 2015-2018
 ##
 ## Objective: Explore and visualize data using R
 ## Please install "lattice" package: install.packages("lattice")

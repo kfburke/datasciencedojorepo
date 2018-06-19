@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015~2016
+## Copyright (c) 2015-2018
 
 ## Objective: Get an intro to web scrapping by building a dataset out of Newegg.com
 ## Data source: NewEgg.com

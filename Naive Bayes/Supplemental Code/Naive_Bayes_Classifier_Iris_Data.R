@@ -1,6 +1,6 @@
 ###################################################################################
 ## This code is part of Data Science Dojo's bootcamp
-## Copyright (C) 2015~2016
+## Copyright (c) 2015-2018
 
 ## Objective: Machine learning of iris species classification with naive Bayes inference
 ## Data source: iris data set (included in R)	
